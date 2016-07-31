@@ -50,15 +50,11 @@ router.post('/addclient', function(req, res){
 		    	db.run("INSERT INTO product (product_name) VALUES (?)",[products[i]]);
 
 	  	}
-	  	// get client id
-	  	// get saving goal id
-	  	// get product id
-
   		db.run("INSERT INTO client (name, sex, phone) VALUES (?,?,?)",[req.body.name, req.body.sex, req.body.phone]);
-  		db.run("INSERT INTO saving_goals (land_size, active, saving_amount, client_id) VALUES (?,?,?,?)",[req.body.land_size,1,req.body.saving_amount,0]);
+  		db.run("INSERT INTO saving_goals (land_size, active, saving_amount) VALUES (?,?,?)",[req.body.land_size,1,req.body.saving_amount]);
   		selection=req.body.product_name;
   		for(i=0;i<selection.length;i++)
-  			db.run("INSERT INTO goal_items (product_id) VALUES (?)",[selection[i]]);
+  			db.run("INSERT INTO goal_items (product_id) SELECT product_id from product WHERE product_name=(?)",[selection[i]]);
 
 
 	});
