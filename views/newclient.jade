@@ -1,0 +1,24 @@
+extends layout
+
+block content
+
+
+  h3= title
+  form#form_add_client_1(name="add_client_1", method="post", action="/addclient1")
+    span Client Name
+    span &nbsp;
+    input#client_name(type="text",required=true, placeholder="Client Name", name="name")
+    br
+    br
+    span Sex
+    span &nbsp;
+    input#client_sex(type="text", required=true, placeholder="Sex", name="sex")
+    br
+    br
+    span Phone Number
+    span &nbsp;
+    input#input_publisher(type="text", required=true,placeholder="Phone Number", name="phone")
+    br
+    br
+    button.btn.btn-regular#next_page(type="submit", name="page1") Next
+    

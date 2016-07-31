@@ -1,0 +1,34 @@
+extends layout
+
+block content
+
+  h3= title
+
+  form#form_add_client_1(name="add_client_1", method="post", action='/addclient')
+    input#client_name(type="hidden", name="name",value="#{name}")
+    input#client_sex(type="hidden", name="sex",value="#{sex}")
+    input#input_publisher(type="hidden", name="phone",value="#{phone}")
+    span Select Land Size
+    span &nbsp;
+    select#land_size( name="land_size")
+        option(value=0.125) 0.125
+        option(value=0.25) 0.25
+        option(value=0.50) 0.50
+        option(value=1) 1
+    br
+    br
+    span Select Product
+    br
+    select#product( name="product_name", multiple='multiple')
+        option(value="Maze with Fertilizer") Maze with Fertilizer
+        option(value="Maze without Fertilizer") Maze without Fertilizer
+        option(value="Peanuts with Fertilizer") Peanuts with Fertilizer
+        option(value="Peanuts without Fertilizer") Peanuts without Fertilizer
+    br
+    br
+    span Enter Savings Goal
+    input#saving_goal(type="text", placeholder="Saving amount", name="saving_amount")
+    br
+    br
+    button.btn.btn-regular#submit(type="submit", name="submit") Submit
+    

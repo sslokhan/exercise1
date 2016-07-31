@@ -1,0 +1,26 @@
+
+
+doctype
+html( lang="en" )
+    head
+        title= title
+
+        button#add_book(type="submit", onclick="window.location.href = '/newclient' ") Add Client
+  button#search_book(type="submit", onclick="window.location.href = '/tablelist' ") View Tables
+
+
+
+        meta( charset='utf-8' )
+        meta( http-equiv='X-UA-Compatible', content='IE=edge' )
+        meta( name='viewport', content='width=device-width, initial-scale=1.0' )
+        meta( name='description', content='Baking Bootstrap Snippets with Jade' )
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        link(href="/stylesheets/bootstrap.min.css", rel="stylesheet")
+
+ 
+    body(style="padding-bottom:10rem;")
+        .container
+        script( src='/javascripts/jquery.min.js' )
+        script( src='/javascripts/bootstrap.min.js' )
+        script( src='/javascripts/angular.js')
+        block content
