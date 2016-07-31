@@ -11,8 +11,8 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Shehzad Lokhandwalla' });
 });
 
-router.get('/tablelist', function(req, res){
-    res.render('tablelist');
+router.get('/data-mine', function(req, res){
+    res.render('data-mine');
   });
 
 router.get('/newclient', function(req, res){
